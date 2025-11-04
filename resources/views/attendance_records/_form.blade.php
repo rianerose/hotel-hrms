@@ -26,7 +26,7 @@
 
     <div>
         <label for="check_in">Check In (HH:MM)</label>
-        <input id="check_in" type="time" name="check_in" value="{{ old('check_in', $attendanceRecord->check_in ?? '') }}">
+        <input id="check_in" type="time" name="check_in" value="{{ old('check_in', $attendanceRecord->check_in?->format('H:i') ?? '') }}">
         @error('check_in')
         <small style="color: #ef4444;">{{ $message }}</small>
         @enderror
@@ -34,7 +34,7 @@
 
     <div>
         <label for="check_out">Check Out (HH:MM)</label>
-        <input id="check_out" type="time" name="check_out" value="{{ old('check_out', $attendanceRecord->check_out ?? '') }}">
+        <input id="check_out" type="time" name="check_out" value="{{ old('check_out', $attendanceRecord->check_out?->format('H:i') ?? '') }}">
         @error('check_out')
         <small style="color: #ef4444;">{{ $message }}</small>
         @enderror
