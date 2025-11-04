@@ -63,8 +63,8 @@
                             <td>{{ $record->attendance_date->format('M d, Y') }}</td>
                             <td>{{ $record->employee->full_name }}</td>
                             <td style="text-transform: capitalize;">{{ str_replace('_', ' ', $record->status) }}</td>
-                            <td>{{ $record->check_in ? \Carbon\Carbon::createFromFormat('H:i', $record->check_in)->format('h:i A') : '—' }}</td>
-                            <td>{{ $record->check_out ? \Carbon\Carbon::createFromFormat('H:i', $record->check_out)->format('h:i A') : '—' }}</td>
+                            <td>{{ $record->check_in?->format('h:i A') ?? '—' }}</td>
+                            <td>{{ $record->check_out?->format('h:i A') ?? '—' }}</td>
                             <td>{{ number_format($record->hours_worked, 2) }}</td>
                             <td>{{ $record->notes ? \Illuminate\Support\Str::limit($record->notes, 50) : '—' }}</td>
                             <td>
