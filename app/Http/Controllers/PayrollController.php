@@ -68,6 +68,12 @@ class PayrollController extends Controller
         $periodStart = Carbon::parse($validated['period_start'])->startOfDay();
         $periodEnd = Carbon::parse($validated['period_end'])->endOfDay();
 
+        if (!$employee->hourly_rate) {
+            return redirect()
+                ->back()
+                ->with('error', 'Cannot generate payroll: Employee does not have an hourly rate set.');
+        }
+
         $attendanceRecords = AttendanceRecord::where('employee_id', $employee->id)
             ->whereBetween('attendance_date', [$periodStart->toDateString(), $periodEnd->toDateString()])
             ->where('status', 'present')

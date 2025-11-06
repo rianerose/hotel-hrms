@@ -59,7 +59,7 @@
                     <tbody>
                     @foreach ($payrolls as $payroll)
                         <tr>
-                            <td>{{ $payroll->employee->full_name }}</td>
+                            <td>{{ $payroll->employee?->full_name ?? 'Deleted Employee' }}</td>
                             <td>{{ $payroll->period_start->format('M d, Y') }} – {{ $payroll->period_end->format('M d, Y') }}</td>
                             <td>{{ number_format($payroll->hours_worked, 2) }}</td>
                             <td>₱{{ number_format($payroll->gross_pay, 2) }}</td>

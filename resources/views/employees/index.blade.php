@@ -34,7 +34,7 @@
                     <tbody>
                     @foreach ($employees as $employee)
                         <tr>
-                            <td>{{ $employee->full_name }}</td>
+                            <td>{{ $employee?->full_name ?? 'N/A' }}</td>
                             <td>{{ $employee->email }}</td>
                             <td>{{ $employee->department ?: '—' }}</td>
                             <td>{{ $employee->position ?: '—' }}</td>
