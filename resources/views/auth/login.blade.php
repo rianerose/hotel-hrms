@@ -36,11 +36,13 @@
             box-shadow: 0 24px 48px rgba(31, 35, 64, 0.22);
         }
 
-        h1 {
+        img {
             margin: 0 0 0.25rem;
             color: var(--primary);
-            font-size: 1.75rem;
             text-align: center;
+            width: 100%;
+            display: flex;
+            
         }
 
         p.subtitle {
@@ -126,7 +128,7 @@
 </head>
 <body>
 <div class="card">
-    <h1>{{ config('app.name', 'Hotel HRMS') }}</h1>
+    <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo">
     <p class="subtitle">Sign in with your administrator credentials to continue.</p>
 
     <form method="POST" action="{{ route('login.attempt') }}">
@@ -159,7 +161,7 @@
     </form>
 
     <footer>
-        &copy; {{ date('Y') }} Hotel HR Management System
+        &copy; {{ date('Y') }} Isla Del Sol Hotel HRMS
     </footer>
 </div>
 </body>

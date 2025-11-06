@@ -249,7 +249,9 @@
 </head>
 <body>
 <header>
-    <h1>{{ config('app.name', 'Hotel HRMS') }}</h1>
+    <a href="{{ route('employees.index') }}">
+        <img src="{{ asset('images/logo.png') }}" alt="{{ config('app.name') }} Logo" style="width: 200px; display: block;">
+    </a>
     <nav>
         <a href="{{ route('employees.index') }}" class="{{ request()->routeIs('employees.*') ? 'active' : '' }}">Employees</a>
         <a href="{{ route('attendance-records.index') }}" class="{{ request()->routeIs('attendance-records.*') ? 'active' : '' }}">Attendance</a>
@@ -279,7 +281,7 @@
 </main>
 
 <footer>
-    &copy; {{ date('Y') }} Hotel HR Management System
+    &copy; {{ date('Y') }} {{ config('app.name', 'Isla Del Sol Hotel HRMS') }}
 </footer>
 </body>
 </html>
