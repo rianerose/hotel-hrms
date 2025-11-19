@@ -1,6 +1,6 @@
 ## Isla Del Sol Hotel HRMS
 
-This Laravel 12 application manages hotel employees, attendance, and payroll calculations. The UI follows the hotel brand palette (`#3338A0`, `#FCC61D`, `#FFFFFF`) and includes dedicated sections for each functional area.
+This Laravel 12 application manages hotel employees, attendance, and payroll calculations.
 
 ### Features
 
@@ -25,7 +25,7 @@ This Laravel 12 application manages hotel employees, attendance, and payroll cal
     ```
 2. Copy and adjust the environment file:
     ```bash
-    cp .env .env.local
+    copy .env.example .env
     ```
     Update `.env.local` (or `.env`) with your MySQL credentials. Default placeholders are:
     ```env
